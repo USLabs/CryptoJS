@@ -1,5 +1,5 @@
 .container {
-    margin-left: 0px;
+    margin: 0 auto;
     width: 360px;
 }
 
@@ -9,7 +9,7 @@ a:hover {
 }
 
 body .modal-dialog {
-    margin: 0px;
+    margin: 0 auto;
     width: 360px;
     overflow: hidden;
 }

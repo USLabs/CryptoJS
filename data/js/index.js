@@ -1,25 +1,17 @@
-/**
- * index.js
- *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the MIT license.
- *
- * Controls index.html
- */
 
 $(document).ready(function () {
-    // function to encrypt
+    // function to encrypt with passphrase
 	function encrypt(message, passwords) {
 		var encrypted = CryptoJS.AES.encrypt(message, passwords);
 		return encrypted;
 	}
 
-	// function to decrypt
+	// function to decrypt with passphrase
 	function decrypt(message, passwords) {
 		var decrypted = CryptoJS.AES.decrypt(message, passwords);
 		return decrypted.toString(CryptoJS.enc.Utf8);
 	}
-	
+
 	// function to copy text to clipboard
 	function copyText() {
 		document.getElementById("confirmationText").select();
@@ -52,7 +44,7 @@ $(document).ready(function () {
 		var text = "" + codeResult;
                     $('#confirmationText').html(text);
                     $('#confirmationModal').modal().show();
-        });
+    });
 	
 	$('#decryptButton').click(function () {
 		var codeMessage = $('#messageBox').val();
@@ -63,7 +55,7 @@ $(document).ready(function () {
 		var text = "" + codeResult;
                     $('#confirmationText').html(text);
                     $('#confirmationModal').modal().show();
-        });	
+    });
 	
 	$("#copy").click(function () {
 		copyText();

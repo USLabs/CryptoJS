@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>EncryptIt 1.0</title>
+    <title>Crypto JS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/index.css" rel="stylesheet">
@@ -14,9 +14,13 @@
 
 <div id="cover" style="display: none;"></div>
 <div id="main" class="container">
+    <div class="row">
+        <div class="panel-heading"></div>
+        <div class="panel-body"></div>
+    </div>
     <div id="send" class="row panel panel-primary">
         <div class="panel-heading">
-            Encrypt-It
+            Crypto JS
             <div class="btn-group">
                 <button type="button" id="settingsButton" class="btn btn-tools btn-small dropdown-toggle" data-toggle="dropdown">
                     <span class="glyphicon glyphicon-chevron-down"></span>
@@ -42,16 +46,22 @@
             <div class="form-group">
                 <label for="messageBox">Message:</label>
 				<textarea class="form-control" id="messageBox" placeholder="Enter message to process..."></textarea>
-            </div>
-            <label for="passwordBox">Password:</label>
-            <div class="input-group">
-                <input type="password" class="form-control" id="passwordBox" placeholder="Encryption password...">
-                <div class="input-group-btn">
-                    <button id="goButton" type="submit" class="btn btn-primary">Encrypt</button>
-					<button id="decryptButton" type="submit" class="btn btn-danger">Decrypt</button>
+            </div>            
+            <div id="passwords">
+                <label for="passwordBox">Password:</label>
+                <div class="input-group">
+                    <input type="password" class="form-control" id="passwordBox" placeholder="Encryption password...">
+                    <div class="input-group-btn">
+                        <button id="goButton" type="submit" class="btn btn-primary">Encrypt</button>
+                        <button id="decryptButton" type="submit" class="btn btn-danger">Decrypt</button>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="row">
+        <div class="panel-heading"></div>
+        <div class="panel-body"></div>
     </div>
 </div>
 <!-- /.modal -->
@@ -59,26 +69,41 @@
 <!-- Results Confirmation -->
 <div class="modal fade" id="confirmationModal">
     <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">Results</h4>
+        <div class="row">
+            <div class="panel-heading"></div>
+            <div class="panel-body"></div>
+        </div>
+        <div class="row">
+            <div class="panel-heading"></div>
+            <div class="panel-body">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Results</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            Here is your message:
+                        </p>
+                        <textarea class="form-control" id="confirmationText" placeholder="Enter message to process..."></textarea>
+                        <p>                            
+                        </p>
+                        <p>
+                            <button id="copy" type="button" class="btn btn-primary">Copy</button>
+                            <!-- <button id="confirmButton" type="button" class="btn btn-warning">Done</button> -->
+                            <button id ="done" type="button" class="btn btn-danger" data-dismiss="modal">Done</button>
+                        </p>
+                    </div>
+                </div><!-- /.modal-content -->
             </div>
-            <div class="modal-body">
-				<p>
-					Here is your message:
-				</p>
-				<textarea class="form-control" id="confirmationText" placeholder="Enter message to process..."></textarea>
-                <!-- <p id="confirmationText">
-                    Text Placeholder
-                </p> -->
-                <p>
-					<button id="copy" type="button" class="btn btn-primary">Copy</button>
-                    <!-- <button id="confirmButton" type="button" class="btn btn-warning">Done</button> -->
-                    <button id ="done" type="button" class="btn btn-danger" data-dismiss="modal">Done</button>
-                </p>
-            </div>
-        </div><!-- /.modal-content -->
+        </div>
+        <div class="row">
+            <div class="panel-heading"></div>
+            <div class="panel-body"></div>
+        </div>
     </div><!-- /.modal-dialog -->
+            </div>
+        </div>
+    
 </div><!-- /.modal -->
 
 <!-- About -->
@@ -90,12 +115,14 @@
                 <h4 class="modal-title">About</h4>
             </div>
             <div class="modal-body">
-                <h5>Encrypt-It <span id="version">1.0</span></h5>
-                <p>Encrypt-it is a simple program to encrypt and decrypt messages in the browser.<br/>
+                <h5>Crypto JS <span id="version">1.0</span></h5>
+                <p>It is a simple program to encrypt and decrypt messages in the browser.<br/>
+                <!--
                 <div class="alert alert-info">
                     <strong>NEM Tip Jar:</strong>
 					<p>NCAWQM-5MVSPN-GJ3IX6-HNMCVM-ZN3EC6-3PNDOL-ROCK</p>
                 </div>
+                -->
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
